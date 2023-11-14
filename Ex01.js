@@ -34,12 +34,3 @@ var convertedNum3 = formatMoney(num3);
 // formatMoney(1234);
 // formatMoney(12000000.0009);
 // formatMoney(13000000);
-
-
-// var string1 = "";
-// var string2 = "long";
-// var string3 = string1 +string2[2];
-// string1 += string2[3];
-// console.log(string1);
-// console.log(string2);
-// console.log(string3);
