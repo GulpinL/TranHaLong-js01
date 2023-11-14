@@ -4,7 +4,6 @@ function GetExtensionOfFile(inputFileNameStr){
     var _listExtensionFile = ["png", "mp3"];
     var _log
     // check last dot
-
     // not in current format
 
 
