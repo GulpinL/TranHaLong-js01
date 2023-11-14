@@ -37,6 +37,6 @@ function RecursionCombination(num){
     return num;
 }
 
-CalculateCombination(3,6);      //20
-CalculateCombination(5,9);      //126
-CalculateCombination(2,100);    //4950
+CalculateCombination(3,6);      //Expected: 20
+CalculateCombination(5,9);      //Expected: 126
+CalculateCombination(2,100);    //Expected: 4950

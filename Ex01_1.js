@@ -7,12 +7,14 @@ function formatMoney(num){
     var _intPart = parseInt(Number(num));
     var _intPartLength = (_intPart+"").length;      
     var _floatPart = _numStr.slice(_intPartLength, _numStr.length);
-    var _leftNumPerThousandLength = _intPartLength % 3;                
+    var _leftNumPerThousandLength = _intPartLength % 3;     
+
     // Get very first number of input number, ex: 12 000 000 -> get 12 
     var _numFormat = _numStr.slice(0, _leftNumPerThousandLength);    
     if(_leftNumPerThousandLength != 0){
         _numFormat += ",";
     }   
+
     // For every 3 step, add ',' to the end
     var j = 0;
     for (let i = _leftNumPerThousandLength; i < _intPartLength; i++){
@@ -22,6 +24,7 @@ function formatMoney(num){
             _numFormat += ",";
         }
     }
+    
     // Get float left part
     _numFormat +=_floatPart;
     console.log("Num Format: "+_numFormat);
