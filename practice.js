@@ -2,62 +2,38 @@ var num1 = 10000000;
 var num2 = 123456;
 var num3 = 12000.02;
 
-function checkFloat(num){
-    // var newNum = num /1;
-    var newNum = parseInt(Number(num));
-    console.log(newNum);
-}
-
 function formatMoney(num){ 
-    var numString = num+"";
-    var numIntPart = parseInt(Number(num));
-    var numAbs = Math.abs((num - numIntPart));
-    var numLeftString = numString.slice((numIntPart+"").numLength,numString.numLength);
-    console.log("Me me: " + numLeftString);
+    var _numStr = num + "";
+    var _intPart = parseInt(Number(num));
+    var _intPartLength = (_intPart+"").length;      
+    var _floatPart = _numStr.slice(_intPartLength, _numStr.length);
+    var _leftNumPerThousandLength = _intPartLength % 3;                
+    // Get very first number of input number, ex: 12 000 000 -> get 12 
+    var _numFormat = _numStr.slice(0, _leftNumPerThousandLength);    
+    if(_leftNumPerThousandLength != 0){
+        _numFormat += ",";
+    }   
+    // For every 3 step, add ',' to the end
+    var j = 0;
+    for (let i = _leftNumPerThousandLength; i < _intPartLength; i++){
+        _numFormat +=_numStr[i];
+        j++;
+        if(j%3 == 0 && i!=(_intPartLength-1)){
+            _numFormat += ",";
+        }
+    }
+    // Get float left part
+    _numFormat +=_floatPart;
+    console.log("Num Format: "+_numFormat);
     
-    if( numAbs < 0.0000000001){
-        console.log("Check Nguyen");
-        ConvertNumIntStyle(numString);
-        return;
-    }
-    else{
-        console.log("Day la so float");
-    }
 }
 
-function ConvertNumIntStyle(numString){    //1 200                  
-    var numLength = numString.numLength;    // 4
-    var leftNum = numLength %3;             // 1
-    var newNumString = "";
-    console.log("Content in Int: " + numString);
-    console.log("type of: "+ typeof(numString));
-
-    if(leftNum != 0){
-        for(var i = 0 ;i < leftNum;i++){   // 1 200 000  //0 1 2 3 4 5 6
-            newNumString += numString[i];
-        }
-        newNumString += ",";
-        console.log("do1");
-    }
-
-    for(var j = leftNum ;j < numLength;j++){   // 1 200 000  //0 1 2 3 4 5 6
-        newNumString += numString[j];
-        if(j%3 ===0){
-            newNumString += ",";
-        }
-        console.log("do2");
-    }
-
-    console.log("Convert Num: "+newNumString);
-
-}
-
-// var convertedNum1 = formatMoney(num1);
-// var convertedNum2 = formatMoney(num2);
-// var convertedNum3 = formatMoney(num3);
+var convertedNum1 = formatMoney(num1);
+var convertedNum2 = formatMoney(num2);
+var convertedNum3 = formatMoney(num3);
 // formatMoney(1234);
-// formatMoney(12000000.0002);
-formatMoney(13000000);
+// formatMoney(12000000.0009);
+// formatMoney(13000000);
 
 
 // var string1 = "";
