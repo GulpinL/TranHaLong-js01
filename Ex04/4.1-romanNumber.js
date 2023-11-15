@@ -8,17 +8,18 @@ function ConvertToRomanNumber3(num){
     str = RecursionRomanStr(num,str,index);
 }
 
-function RecursionRomanStr(num, str, index){//  199, "", 4
+function RecursionRomanStr(num, str, index){
     if(index < 0 ){
-        console.log("Final str: "+ str);
+        console.log(str);
         return ;
     }
     if(n <0){
-        console.log("Final str: "+ str);
+        console.log(str);
         return ;
     }
 
-    var n = Math.floor(num / listRomanValueTable[index]);// = 900 /1000 = 0, index =6
+    // Check value per e10
+    var n = Math.floor(num / listRomanValueTable[index]);
     if(n <= 5){
         if(n == 0){
             
@@ -28,17 +29,20 @@ function RecursionRomanStr(num, str, index){//  199, "", 4
         else if(n == 4){
             str += listRomanCharTable[index];
             str += listRomanCharTable[index+1];
-        }else{        //1 2 3
+        }else{        
             for(var i =0;i< n;i++){
                 str+= listRomanCharTable[index]
             }
         }
     }
-    else{// >5
-        if(n == 9){// 9 -> I V X -> I X
+    // n = 5 6 7 8 9
+    else{
+        // 9        -> I, V, X, index = I -> IX
+        if(n == 9){                 
             str += listRomanCharTable[index];
             str += listRomanCharTable[index+2];
-        }else{//6 7 8 -> I V X -> VI , VII, VIII
+        //6 7 8     -> I, V, X, index = I -> VI , VII, VIII
+        }else{                      
             str += listRomanCharTable[index+1];
             for(var i =0;i< n -5 ;i++){
                 str+= listRomanCharTable[index]

@@ -25,19 +25,17 @@ function CalculateCombination(k ,n){
     var _n_k = RecursionCombination(n-k);
     // Calculate combination
     _combination = _n /(_k*_n_k);
-    console.log("Combination: "+ _combination);
+    return _combination;
 }
 
 // n! = n * (n - 1) * (n - 2) * ... * 1
 function RecursionCombination(num){
-    console.log("current num:"+ num);
     if(num == 1){
         return 1;
     }
     num = num* RecursionCombination(num-1);
     return num;
 }
-
-CalculateCombination(3,6);      //Expected: 20
-CalculateCombination(5,9);      //Expected: 126
-CalculateCombination(2,100);    //Expected: 4950
+console.log(CalculateCombination(3,6));     //Expected: 20
+console.log(CalculateCombination(5,9));     //Expected: 126
+console.log(CalculateCombination(2,100));   //Expected: 4950

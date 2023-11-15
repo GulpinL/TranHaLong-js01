@@ -7,7 +7,7 @@ function CountWordAppearInString(inputStr){
         var _indexChar = inputStr.slice(i-1,i);
         if(_indexChar === _indexChar.toUpperCase()){
             count++;
-            // console.log("TRUEEE"+_indexChar);
+            // console.log(_indexChar);
         }
     }
     return count;

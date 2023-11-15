@@ -1,6 +1,3 @@
-var num1 = 10000000;
-var num2 = 123456;
-var num3 = 12000.02;
 
 function formatMoney(num){ 
     var _numStr = num + "";
@@ -27,13 +24,12 @@ function formatMoney(num){
     
     // Get float left part
     _numFormat +=_floatPart;
-    console.log("Num Format: "+_numFormat);
-    
+    console.log(_numFormat);
 }
 
+var num1 = 10000000;
+var num2 = 123456;
+var num3 = 12000.02;
 var convertedNum1 = formatMoney(num1);
 var convertedNum2 = formatMoney(num2);
 var convertedNum3 = formatMoney(num3);
-// formatMoney(1234);
-// formatMoney(12000000.0009);
-// formatMoney(13000000);

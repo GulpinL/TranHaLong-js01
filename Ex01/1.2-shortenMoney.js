@@ -13,6 +13,7 @@ function formatShortenMoney(num){
     }
 
     // Rule BB, KB, MB, KBBB, MBBB, BBBB -> never see two letter 'M' or two letters 'K' at same time
+    // 1 B have 9 character
     var _numE10 = _numStr.length;// 
     _numE10 = _numE10 - 1;
     var B = parseInt(_numE10/9);
@@ -49,7 +50,7 @@ function formatShortenMoney(num){
     }
     _numStrShorten = _headNumStr + _numStrShorten;
 
-    console.log("Shorten Money: "+_numStrShorten);
+    console.log(_numStrShorten);
 }
 
 formatShortenMoney(num1); //Expected: 1K -> 1.00K
