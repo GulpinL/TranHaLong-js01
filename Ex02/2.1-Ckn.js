@@ -30,6 +30,7 @@ function CalculateCombination(k ,n){
 
 // n! = n * (n - 1) * (n - 2) * ... * 1
 function RecursionCombination(num){
+    console.log("current num:"+ num);
     if(num == 1){
         return 1;
     }

@@ -4,6 +4,7 @@ function GetRandomNumber(min, max){
         return null;
     }
     var _randomNum = Math.random() * (max - min) + min;
+    // float
     _randomNum = parseInt(Math.round(_randomNum));
     return _randomNum;
 }

@@ -14,22 +14,22 @@ function formatShortenMoney(num){
 
     // Rule BB, KB, MB, KBBB, MBBB, BBBB -> never see two letter 'M' or two letters 'K' at same time
     var _numE10 = _numStr.length;// 
-    var _numE10_2 = _numE10 - 1;
-    var B = parseInt(_numE10_2/9);
+    _numE10 = _numE10 - 1;
+    var B = parseInt(_numE10/9);
 
     if(B > 0){
         for(var i=0;i<B;i++){
             _numStrShorten = "B"+_numStrShorten;
-            _numE10_2 -=9;
+            _numE10 -=9;
         }
     }
     else{
-        var M = parseInt(_numE10_2 /6);
+        var M = parseInt(_numE10 /6);
         if(M > 0){
             _numStrShorten = "M"+_numStrShorten;
         }
         else{
-            var K = parseInt(_numE10_2 /3);
+            var K = parseInt(_numE10 /3);
             if(K > 0){
                 _numStrShorten = "K"+_numStrShorten;
             }

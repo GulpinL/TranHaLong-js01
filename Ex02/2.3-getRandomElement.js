@@ -1,5 +1,3 @@
-var array = ["I", "Love", "U"];
-
 function GetRandomElementFromArray(array){
     var _max = array.length - 1;
     var _min = 0;
@@ -17,5 +15,5 @@ function GetRandomNumber(min, max){
     return _randomNum;
 }
 
-
+var array = ["I", "Love", "U"];
 console.log(GetRandomElementFromArray(array));
