@@ -1,4 +1,4 @@
-var listRomanValueTable =       [ 1,   5,  10,  50,  100, 500, 1000];
+var listRomanValueTable =       [ 1,   5,  10,  50,  100, 500, 1000];// map hash
 var listRomanCharTable =        ["I", "V", "X", "L", "C", "D", "M"];
             //index             //0    1    2    3    4    5    6
 
@@ -24,7 +24,7 @@ function RecursionRomanStr(num, str, index){
         if(n == 0){
             
         } else if(n == 5){
-            str += listRomanCharTable[index+1];
+            str += listRomanCharTable[index+1]; 
         }
         else if(n == 4){
             str += listRomanCharTable[index];

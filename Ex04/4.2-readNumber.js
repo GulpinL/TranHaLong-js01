@@ -24,7 +24,8 @@ function ReadUnderTenThousand(num){ //1230
         }
     }
     if(_num1 != 0){
-        if(_num1 == 1&& _num10==1){ // 11 -> muoi mot
+        // 11 -> muoi mot
+        if(_num1 == 1&& _num10==1){ 
             _str += "một";
         }
         else if(_num10 == 0 && _num100 != 0){   // 101 -> 1 tram linh mot
@@ -41,8 +42,6 @@ function ReadUnderTenThousand(num){ //1230
     }
 
     return _str;
-
-
 }
 function ReplaceStringNumber(num){
     if(num == 1){
