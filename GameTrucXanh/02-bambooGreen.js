@@ -4,7 +4,7 @@ var currentClick = 0;
 var currentBtnId;
 var currentClickedBackCardImg;
 var currentClickedFrontCardImg;
-
+var score = 0;  
 var clickBackId;
 var clickFrontId;
 
@@ -64,6 +64,9 @@ function flipCard() {
         if(frontCardImg.src === document.getElementById(clickFrontId).src){
         //    alert("TRUNG NHAU : backImgSrc: "+ frontCardImg.src+"\nfrontImgSrc"+document.getElementById(clickFrontId).src );
             //PLUS POITN
+            ctr = document.getElementById("counter");
+            score++;
+            ctr.innerHTML = score;
         }else{
             FlipDownBecauseOfNotMatch(backCardImg, frontCardImg);
             let clickBackCardImg = document.getElementById(clickBackId); 
@@ -138,3 +141,4 @@ function CreateRandomPair(){
     }
     return ranNums;
 }
+
