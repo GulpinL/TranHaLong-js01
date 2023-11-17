@@ -4,28 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GulpinL game truc xanh</title>
-    <style type="text/css">
-        canvas{
-            border: 1px solid black;
-        }
-
-        body{
-            margin: 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="02-bambooGreen.js"></script>
 </head>
 <body>
-    <canvas></canvas>
-    <script src="gulpinl.js"></script>
-    <script>
-        let a = Number("100");
-        let b = parseInt(Number("100.234"));
-        let c = Number(true); //return 0 or 1 for boolean
-        let d = Number("true"); //returns a number or NaN
-        let e = Number(new Date()); //returns number of milli seconds from Jan 1 1970
-        let f = Number([1]);
-        document.getElementById('valToNum').innerHTML = `Number("100") is ${a} ${'<br/>'} Number("100.234") is ${b} ${'<br/>'} Number(true) is ${c} ${'<br/>'} Number("true") is ${d} ${'<br/>'} Number(new Date()) is ${e} ${'<br/>'} Number([1]) is ${f} `;
-     </script>
+    <button onclick="generateMeMe()">Create game</button> 
+    <table id="myTable" cellspacing="10">
+    </table>
 </body>
-</html>
+</html> 
+
